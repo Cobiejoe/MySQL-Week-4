@@ -1,0 +1,35 @@
+package com.cobarrubias.week4assignment;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class SportDao {
+
+	private Connection connection;
+	private final String GET_SPORTS_QUERY = "SELECT * FROM sports";
+	private final String ADD_SPORT_QUERY = "INSERT INTO sports(name) VALUES(?)";
+	private final String DELETE_SPORT_QUERY = "DELETE FROM sports WHERE id = ?";
+	private final String UPDATE_SPORT_QUERY = "UPDATE sports SET name = ? WHERE id = ?";
+	
+	public SportDao() {
+		connection = DBConnection.getConnection();
+	}
+	
+	public List<Sport> getSports() throws SQLException {
+		ResultSet rs = connection.prepareStatement(GET_SPORTS_QUERY).executeQuery();
+		List<Sport> sports = new ArrayList<Sport>();
+		
+		while (rs.next()) {
+			sports.add(addSport(rs.getInt(1), rs.getString(2)));
+		}
+		return sports;
+	}
+	
+	private Sport addSport(int id, String name) {
+		return new Sport(id, name);
+	}
+	
+}

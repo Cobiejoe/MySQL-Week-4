@@ -1,0 +1,15 @@
+package com.cobarrubias.week4assignment;
+
+import java.sql.Connection;
+
+public class DBConnection {
+
+	private final static String URL = "jdbc:mysql://localhost:3306/teams";
+	private final static String USERNAME = "root";
+	private final static String PASSWORD = "coffeemug420!";
+	
+	private DBConnection(Connection connection) {
+		
+	}
+	
+}

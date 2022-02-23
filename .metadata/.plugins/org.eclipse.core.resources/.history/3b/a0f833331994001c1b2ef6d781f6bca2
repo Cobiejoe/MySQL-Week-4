@@ -1,0 +1,13 @@
+
+public class Menu {
+
+	public void start() {
+		String selection = "";
+		
+		do {
+			printMenu();
+			
+		} while (!selection.equals("-1"));
+	}
+	
+}

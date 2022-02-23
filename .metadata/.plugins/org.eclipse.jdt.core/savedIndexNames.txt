@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Users\josep\Desktop\BOOTCAMP\mySQL week 4\mySQL Week 4 Assignment\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+1602128660.index
+3597071550.index
+3499879516.index
